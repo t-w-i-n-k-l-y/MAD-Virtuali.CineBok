@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "872814138834",
+    "firebase_url": "https://virtuali-2e095-default-rtdb.firebaseio.com",
+    "project_id": "virtuali-2e095",
+    "storage_bucket": "virtuali-2e095.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:872814138834:android:b53d013d7137b4990fe40b",
+        "android_client_info": {
+          "package_name": "com.virtuali.cinebok"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "872814138834-n8rl6vjkloenjhc8mh6itu3ci8dti2gi.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBrOO_mZuDBjs26uczkE-JCvCqa0dOEr9M"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "872814138834-n8rl6vjkloenjhc8mh6itu3ci8dti2gi.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
