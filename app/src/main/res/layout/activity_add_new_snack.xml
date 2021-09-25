@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".AddNewSnackActivity">
+
+    <TextView
+        android:id="@+id/tv_image_t"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="128dp"
+        android:text="@string/tv_image_t"
+        app:layout_constraintStart_toStartOf="@+id/tv_name_item_t"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tv_name_item_t"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="64dp"
+        android:text="@string/tv_name_item_t"
+        app:layout_constraintStart_toStartOf="@+id/tv_size_t"
+        app:layout_constraintTop_toBottomOf="@+id/tv_image_t" />
+
+    <TextView
+        android:id="@+id/tv_size_t"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="64dp"
+        android:text="@string/tv_size_t"
+        app:layout_constraintStart_toStartOf="@+id/tv_price_t"
+        app:layout_constraintTop_toBottomOf="@+id/tv_name_item_t" />
+
+    <TextView
+        android:id="@+id/tv_price_t"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="64dp"
+        android:text="@string/tv_price_t"
+        app:layout_constraintStart_toStartOf="@+id/tv_available_t"
+        app:layout_constraintTop_toBottomOf="@+id/tv_size_t" />
+
+    <TextView
+        android:id="@+id/tv_available_t"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="64dp"
+        android:layout_marginEnd="32dp"
+        android:layout_marginRight="32dp"
+        android:text="@string/tv_available_t"
+        app:layout_constraintEnd_toStartOf="@+id/et_sb_availability_t"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_price_t" />
+
+    <Button
+        android:id="@+id/btn_add1_t"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="108dp"
+        android:layout_marginBottom="32dp"
+        android:text="@string/btn_add_t"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/et_sb_availability_t" />
+
+    <EditText
+        android:id="@+id/et_sb_name_t"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textPersonName"
+        app:layout_constraintBaseline_toBaselineOf="@+id/tv_name_item_t"
+        app:layout_constraintStart_toEndOf="@+id/tv_name_item_t"
+        app:layout_constraintStart_toStartOf="@+id/et_sb_size_t" />
+
+    <EditText
+        android:id="@+id/et_sb_size_t"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textPersonName"
+        app:layout_constraintBaseline_toBaselineOf="@+id/tv_size_t"
+        app:layout_constraintStart_toEndOf="@+id/tv_size_t"
+        app:layout_constraintStart_toStartOf="@+id/et_sb_price_t" />
+
+    <EditText
+        android:id="@+id/et_sb_availability_t"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textPersonName"
+        app:layout_constraintBaseline_toBaselineOf="@+id/tv_available_t"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/tv_available_t" />
+
+    <EditText
+        android:id="@+id/et_sb_price_t"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="numberDecimal"
+        app:layout_constraintBaseline_toBaselineOf="@+id/tv_price_t"
+        app:layout_constraintStart_toEndOf="@+id/tv_price_t"
+        app:layout_constraintStart_toStartOf="@+id/et_sb_availability_t" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="29dp"
+        android:layout_height="22dp"
+        android:layout_marginTop="124dp"
+        app:layout_constraintStart_toEndOf="@+id/tv_image_t"
+        app:layout_constraintStart_toStartOf="@+id/et_sb_name_t"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/ic_menu_gallery" />
+
+    <EditText
+        android:id="@+id/et_url_snack_t"
+        android:layout_width="157dp"
+        android:layout_height="46dp"
+        android:layout_marginTop="112dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        app:layout_constraintStart_toEndOf="@+id/imageView"
+        app:layout_constraintTop_toTopOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

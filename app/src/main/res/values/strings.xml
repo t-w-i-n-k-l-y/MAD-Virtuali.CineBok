@@ -17,4 +17,40 @@
     <string name="menu_profile">Profile</string>
     <string name="menu_booking_history">Booking HIstory</string>
     <string name="menu_signout">Logout</string>
+
+
+
+<!--    T     -->
+    <string name="btn_book_home_t">Book now</string>
+    <string name="tv_opt_vip_t">Want to experience VIP cinema?</string>
+    <string name="btn_vip_book_home_t">Book VIP cinema</string>
+    <string name="tv_home_prob_t">For more information contact us.</string>
+    <string name="title_activity_vip_movies_t">ScrollingActivity</string>
+    <string name="tv_fname_t">First Name</string>
+    <string name="tv_lname_t">Last Name</string>
+    <string name="NIC_t">NIC</string>
+    <string name="tv_phone_t">Mobile No.</string>
+    <string name="tv_email_t">Email</string>
+    <string name="tv_ticket_tot_t">Tickets</string>
+    <string name="tv_snack_tot_t">Other</string>
+    <string name="tv_tot_t">Total</string>
+    <string name="btn_confirm_t">Confirm</string>
+    <string name="tv_no_tickets_t">No of Tickets</string>
+    <string name="tv_snack_opt_t">Need popcorn and coke?</string>
+    <string name="btn_yes_t">Yes</string>
+    <string name="btn_opt1_t">View Item List</string>
+    <string name="btn_opt2_t">Add New Item</string>
+    <string name="btn_add_t">Add</string>
+    <string name="btn_update_list_t">Update</string>
+    <string name="btn_delete_record_t">Delete</string>
+    <string name="tv_image_t">Image</string>
+    <string name="tv_name_item_t">Name</string>
+    <string name="tv_size_t">Size</string>
+    <string name="tv_price_t">Price</string>
+    <string name="tv_available_t">Availability</string>
+    <string name="btn_upload">Upload</string>
+    <string name="btn_hall_management">Hall Management</string>
+    <string name="btn_movie_management">Movie Management</string>
+    <string name="btn_schedule_management">Schedule Management</string>
+    <string name="btn_snack_management">Snack and Beverage Management</string>
 </resources>

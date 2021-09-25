@@ -4,22 +4,89 @@
 
     <application
         android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@mipmap/ic_launcher_foreground"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.CineBok.NoActionBar">
+        android:theme="@style/Theme.CineBok">
+
+        <activity
+            android:name=".VipMoviesActivity"
+            android:label="VIP Cinema">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".HomeActivity" />
+        </activity>
+
+        <activity
+            android:name=".VipCheckoutActivity"
+            android:label="Checkout">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".VipBookingActivity" />
+        </activity>
+
+        <activity
+            android:name=".VipBookingActivity"
+            android:label="VIP Cinema Booking">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".VipMoviesActivity" />
+        </activity>
+
+        <activity android:name=".UpdateSnackListActivity" />
+
+        <activity
+            android:name=".SnackMenuActivity"
+            android:label="Snack and Beverages">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".MainActivity" />
+        </activity>
+
+        <activity
+            android:name=".SnackListActivity"
+            android:label="Snack and Beverage List">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".SnackMenuActivity" />
+        </activity>
+
+        <activity
+            android:name=".SnackBeverageActivity"
+            android:label="Snack and Beverages">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".VipBookingActivity" />
+        </activity>
+
+        <activity android:name=".AdminHomeActivity" />
+
+        <activity android:name=".AddNewSnackActivity"
+            android:label="Add new record">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".SnackListActivity" />
+        </activity>
+
         <activity
             android:name=".HomeActivity"
             android:label="@string/title_activity_home"
-            android:theme="@style/Theme.CineBok.NoActionBar"/>
-        <activity android:name=".MainActivity">
+            android:theme="@style/Theme.CineBok.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".MainActivity" />
+        </activity>
+
+        <activity android:name=".MainActivity"
+            android:theme="@style/Theme.CineBok.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
     </application>
 
 </manifest>

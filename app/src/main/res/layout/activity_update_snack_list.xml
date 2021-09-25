@@ -1,0 +1,284 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".SnackBeverageActivity">
+
+    <ScrollView
+        android:id="@+id/sv_vip_movies_t"
+        android:layout_width="413dp"
+        android:layout_height="551dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:id="@+id/Container_1_t"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:text="Update Details"
+                android:textSize="25sp"
+                android:background="@color/navy_blue"
+                android:layout_marginTop="10dp"
+                android:gravity="center"
+                android:textColor="@color/white"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:textSize="20sp"
+                android:layout_marginTop="5dp"
+                android:layout_marginBottom="5dp"
+                android:text="Name"/>
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="35dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:background="@drawable/rounded"
+                android:gravity="center"
+                android:id="@+id/et_sb_name_t"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:textSize="20sp"
+                android:layout_marginTop="5dp"
+                android:layout_marginBottom="5dp"
+                android:text="Size"/>
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="35dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:background="@drawable/rounded"
+                android:gravity="center"
+                android:id="@+id/et_sb_size_t"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:textSize="20sp"
+                android:layout_marginTop="5dp"
+                android:layout_marginBottom="5dp"
+                android:text="Price"/>
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="35dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:background="@drawable/rounded"
+                android:gravity="center"
+                android:id="@+id/et_sb_price_t"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:textSize="20sp"
+                android:layout_marginTop="5dp"
+                android:layout_marginBottom="5dp"
+                android:text="Availability"/>
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="35dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:background="@drawable/rounded"
+                android:gravity="center"
+                android:id="@+id/et_sb_availability_t"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:textSize="20sp"
+                android:layout_marginTop="5dp"
+                android:layout_marginBottom="5dp"
+                android:text="Image URL"/>
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="35dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:background="@drawable/rounded"
+                android:gravity="center"
+                android:id="@+id/et_sb_url_t"/>
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/btn_update_list_t"
+                android:layout_marginLeft="25dp"
+                android:layout_marginRight="25dp"
+                android:layout_marginTop="10dp"
+                android:textSize="20dp"
+                android:textAllCaps="false"
+                android:background="@drawable/rounded"
+                android:gravity="center"
+                android:id="@+id/btn_update_t"
+                android:layout_marginBottom="10dp"/>
+
+        </LinearLayout>
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+
+    <!--<?xml version="1.0" encoding="utf-8"?>-->
+    <!--<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"-->
+    <!--    xmlns:app="http://schemas.android.com/apk/res-auto"-->
+    <!--    xmlns:tools="http://schemas.android.com/tools"-->
+    <!--    android:layout_width="match_parent"-->
+    <!--    android:layout_height="match_parent"-->
+    <!--    tools:context=".UpdateSnackListActivity">-->
+
+    <!--    <TextView-->
+    <!--        android:id="@+id/tv_image_t"-->
+    <!--        android:layout_width="wrap_content"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        android:layout_marginTop="128dp"-->
+    <!--        android:text="@string/tv_image_t"-->
+    <!--        app:layout_constraintStart_toStartOf="@+id/tv_name_item_t"-->
+    <!--        app:layout_constraintTop_toTopOf="parent" />-->
+
+    <!--    <TextView-->
+    <!--        android:id="@+id/tv_name_item_t"-->
+    <!--        android:layout_width="wrap_content"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        android:layout_marginTop="64dp"-->
+    <!--        android:text="@string/tv_name_item_t"-->
+    <!--        app:layout_constraintStart_toStartOf="@+id/tv_size_t"-->
+    <!--        app:layout_constraintTop_toBottomOf="@+id/tv_image_t" />-->
+
+    <!--    <TextView-->
+    <!--        android:id="@+id/tv_size_t"-->
+    <!--        android:layout_width="wrap_content"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        android:layout_marginTop="64dp"-->
+    <!--        android:text="@string/tv_size_t"-->
+    <!--        app:layout_constraintStart_toStartOf="@+id/tv_price_t"-->
+    <!--        app:layout_constraintTop_toBottomOf="@+id/tv_name_item_t" />-->
+
+    <!--    <TextView-->
+    <!--        android:id="@+id/tv_price_t"-->
+    <!--        android:layout_width="wrap_content"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        android:layout_marginTop="64dp"-->
+    <!--        android:text="@string/tv_price_t"-->
+    <!--        app:layout_constraintStart_toStartOf="@+id/tv_available_t"-->
+    <!--        app:layout_constraintTop_toBottomOf="@+id/tv_size_t" />-->
+
+    <!--    <TextView-->
+    <!--        android:id="@+id/tv_available_t"-->
+    <!--        android:layout_width="wrap_content"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        android:layout_marginTop="64dp"-->
+    <!--        android:layout_marginEnd="32dp"-->
+    <!--        android:layout_marginRight="32dp"-->
+    <!--        android:text="@string/tv_available_t"-->
+    <!--        app:layout_constraintEnd_toStartOf="@+id/et_sb_availability_t"-->
+    <!--        app:layout_constraintHorizontal_bias="0.5"-->
+    <!--        app:layout_constraintStart_toStartOf="parent"-->
+    <!--        app:layout_constraintTop_toBottomOf="@+id/tv_price_t" />-->
+
+    <!--    <Button-->
+    <!--        android:id="@+id/btn_update_list_t"-->
+    <!--        android:layout_width="wrap_content"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        android:layout_marginTop="108dp"-->
+    <!--        android:layout_marginBottom="32dp"-->
+    <!--        android:text="@string/btn_update_list_t"-->
+    <!--        app:layout_constraintBottom_toBottomOf="parent"-->
+    <!--        app:layout_constraintEnd_toStartOf="@+id/btn_delete_record_t"-->
+    <!--        app:layout_constraintHorizontal_bias="0.5"-->
+    <!--        app:layout_constraintStart_toStartOf="parent"-->
+    <!--        app:layout_constraintTop_toBottomOf="@+id/et_sb_availability_t" />-->
+
+    <!--    <Button-->
+    <!--        android:id="@+id/btn_delete_record_t"-->
+    <!--        android:layout_width="wrap_content"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        android:text="@string/btn_delete_record_t"-->
+    <!--        app:layout_constraintBaseline_toBaselineOf="@+id/btn_update_list_t"-->
+    <!--        app:layout_constraintEnd_toEndOf="parent"-->
+    <!--        app:layout_constraintHorizontal_bias="0.5"-->
+    <!--        app:layout_constraintStart_toEndOf="@+id/btn_update_list_t" />-->
+
+    <!--    <EditText-->
+    <!--        android:id="@+id/et_sb_name_t"-->
+    <!--        android:layout_width="wrap_content"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        android:ems="10"-->
+    <!--        android:inputType="textPersonName"-->
+    <!--        app:layout_constraintBaseline_toBaselineOf="@+id/tv_name_item_t"-->
+    <!--        app:layout_constraintStart_toEndOf="@+id/tv_name_item_t"-->
+    <!--        app:layout_constraintStart_toStartOf="@+id/et_sb_size_t" />-->
+
+    <!--    <EditText-->
+    <!--        android:id="@+id/et_sb_size_t"-->
+    <!--        android:layout_width="wrap_content"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        android:ems="10"-->
+    <!--        android:inputType="textPersonName"-->
+    <!--        app:layout_constraintBaseline_toBaselineOf="@+id/tv_size_t"-->
+    <!--        app:layout_constraintStart_toEndOf="@+id/tv_size_t"-->
+    <!--        app:layout_constraintStart_toStartOf="@+id/et_sb_price_t" />-->
+
+    <!--    <EditText-->
+    <!--        android:id="@+id/et_sb_availability_t"-->
+    <!--        android:layout_width="wrap_content"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        android:ems="10"-->
+    <!--        android:inputType="textPersonName"-->
+    <!--        app:layout_constraintBaseline_toBaselineOf="@+id/tv_available_t"-->
+    <!--        app:layout_constraintEnd_toEndOf="parent"-->
+    <!--        app:layout_constraintHorizontal_bias="0.5"-->
+    <!--        app:layout_constraintStart_toEndOf="@+id/tv_available_t" />-->
+
+    <!--    <EditText-->
+    <!--        android:id="@+id/et_sb_price_t"-->
+    <!--        android:layout_width="wrap_content"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        android:ems="10"-->
+    <!--        android:inputType="numberDecimal"-->
+    <!--        app:layout_constraintBaseline_toBaselineOf="@+id/tv_price_t"-->
+    <!--        app:layout_constraintStart_toEndOf="@+id/tv_price_t"-->
+    <!--        app:layout_constraintStart_toStartOf="@+id/et_sb_availability_t" />-->
+
+    <!--    <ImageView-->
+    <!--        android:id="@+id/imageView"-->
+    <!--        android:layout_width="29dp"-->
+    <!--        android:layout_height="22dp"-->
+    <!--        android:layout_marginTop="128dp"-->
+    <!--        app:layout_constraintStart_toEndOf="@+id/tv_image_t"-->
+    <!--        app:layout_constraintStart_toStartOf="@+id/et_sb_name_t"-->
+    <!--        app:layout_constraintTop_toTopOf="parent"-->
+    <!--        app:srcCompat="@drawable/ic_menu_gallery" />-->
+
+    <!--    <Button-->
+    <!--        android:id="@+id/btn_upload"-->
+    <!--        android:layout_width="125dp"-->
+    <!--        android:layout_height="45dp"-->
+    <!--        android:background="@color/full_tansparent"-->
+    <!--        android:text="@string/btn_upload"-->
+    <!--        android:textAllCaps="false"-->
+    <!--        android:textColor="@color/navy_blue"-->
+    <!--        app:layout_constraintBaseline_toBaselineOf="@+id/tv_image_t"-->
+    <!--        app:layout_constraintEnd_toEndOf="parent"-->
+    <!--        app:layout_constraintHorizontal_bias="0.5"-->
+    <!--        app:layout_constraintStart_toEndOf="@+id/imageView" />-->
+
+    <!--</androidx.constraintlayout.widget.ConstraintLayout>-->

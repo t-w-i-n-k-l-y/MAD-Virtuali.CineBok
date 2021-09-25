@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:cardCornerRadius="6dp"
+    android:elevation="6dp"
+    app:cardUseCompatPadding="true">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="15dp"
+        android:layout_centerInParent="true">
+
+        <!--        <de.hdodenhof.circleimageview.CircleImageView-->
+        <!--            android:id="@+id/img_movie_t"-->
+        <!--            android:layout_width="match_parent"-->
+        <!--            android:layout_height="wrap_content"-->
+        <!--            android:layout_centerVertical="true"-->
+        <!--            android:layout_marginBottom="200dp"-->
+        <!--            android:src="@mipmap/ic_launcher"-->
+        <!--            app:civ_border_color="@color/black"-->
+        <!--            app:civ_border_width="2dp" />-->
+
+        <TextView
+            android:id="@+id/tv_name_vip_t"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:text="Movie Name"
+            android:textColor="@color/black"
+            android:textSize="25sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/tv_hname_vip_t"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tv_name_vip_t"
+            android:layout_marginLeft="10dp"
+            android:text="Hall Name"
+            android:textColor="@color/black"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/tv_duration_vip_t"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tv_hname_vip_t"
+            android:layout_marginLeft="10dp"
+            android:text="Duration"
+            android:textColor="@color/black"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/tv_date_vip_t"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tv_duration_vip_t"
+            android:layout_marginLeft="10dp"
+            android:text="Date"
+            android:textColor="@color/black"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/tv_time_vip_t"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tv_date_vip_t"
+            android:layout_marginLeft="10dp"
+            android:text="Time"
+            android:textColor="@color/black"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/tv_price_vip_t"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tv_time_vip_t"
+            android:layout_marginLeft="10dp"
+            android:text="Ticket Price"
+            android:textColor="@color/black"
+            android:textSize="20sp" />
+
+        <!--        <TextView-->
+        <!--            android:id="@+id/tv_diname_vip_t"-->
+        <!--            android:layout_width="match_parent"-->
+        <!--            android:layout_height="wrap_content"-->
+        <!--            android:layout_below="@id/tv_name_vip_t"-->
+        <!--            android:layout_marginLeft="10dp"-->
+        <!--            android:text="Director Name"-->
+        <!--            android:textColor="@color/black"-->
+        <!--            android:textSize="20sp" />-->
+
+        <!--        <TextView-->
+        <!--            android:id="@+id/tv_duration_vip_t"-->
+        <!--            android:layout_width="match_parent"-->
+        <!--            android:layout_height="wrap_content"-->
+        <!--            android:layout_below="@id/tv_diname_vip_t"-->
+        <!--            android:layout_marginLeft="10dp"-->
+        <!--            android:text="Duration"-->
+        <!--            android:textColor="@color/black"-->
+        <!--            android:textSize="20sp" />-->
+
+        <!--        <TextView-->
+        <!--            android:id="@+id/tv_des_vip_t"-->
+        <!--            android:layout_width="match_parent"-->
+        <!--            android:layout_height="wrap_content"-->
+        <!--            android:layout_below="@id/tv_duration_vip_t"-->
+        <!--            android:layout_marginLeft="10dp"-->
+        <!--            android:text="Description"-->
+        <!--            android:textColor="@color/black"-->
+        <!--            android:textSize="20sp" />-->
+
+        <Button
+            android:id="@+id/btn_book1_t"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_marginLeft="20dp"
+            android:layout_below="@id/tv_price_vip_t"
+            android:text="Book"
+            android:onClick="gotomovieDet"/>
+
+        <!--        <LinearLayout-->
+        <!--            android:layout_width="match_parent"-->
+        <!--            android:layout_height="wrap_content"-->
+        <!--            android:orientation="horizontal"-->
+        <!--            android:layout_below="@id/tv_availability_snack_t">-->
+
+        <!--        <Button-->
+        <!--            android:layout_width="wrap_content"-->
+        <!--            android:layout_height="wrap_content"-->
+        <!--            android:layout_gravity="center"-->
+        <!--            android:layout_marginLeft="20dp"-->
+        <!--            android:text="Book"/>-->
+
+
+        <!--        </LinearLayout>-->
+
+    </RelativeLayout>
+
+
+
+</androidx.cardview.widget.CardView>
