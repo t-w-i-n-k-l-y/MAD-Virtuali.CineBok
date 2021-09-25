@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:cardCornerRadius="6dp"
+    android:elevation="6dp"
+    app:cardUseCompatPadding="true">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="15dp">
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/img_snack1_t"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_centerVertical="true"
+            android:src="@mipmap/ic_launcher"
+            app:civ_border_color="@color/black"
+            app:civ_border_width="2dp" />
+
+        <TextView
+            android:id="@+id/tv_name_snack_t"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_toRightOf="@id/img_snack1_t"
+            android:text="Item Name"
+            android:textColor="@color/black"
+            android:textSize="25sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/tv_size_snack_t"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tv_name_snack_t"
+            android:layout_marginLeft="10dp"
+            android:layout_toRightOf="@id/img_snack1_t"
+            android:text="Item Size"
+            android:textColor="@color/black"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/tv_price_snack_t"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tv_size_snack_t"
+            android:layout_marginLeft="10dp"
+            android:layout_toRightOf="@id/img_snack1_t"
+            android:text="Item Price"
+            android:textColor="@color/black"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/tv_availability_snack_t"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tv_price_snack_t"
+            android:layout_marginLeft="10dp"
+            android:layout_toRightOf="@id/img_snack1_t"
+            android:text="Item Availability"
+            android:textColor="@color/black"
+            android:textSize="20sp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_toRightOf="@id/img_snack1_t"
+            android:layout_below="@id/tv_availability_snack_t">
+
+            <ImageView
+                android:id="@+id/editIcon"
+                android:layout_width="140dp"
+                android:layout_height="40dp"
+                android:src="@drawable/edit" />
+
+            <ImageView
+                android:layout_width="140dp"
+                android:layout_height="40dp"
+                android:id="@+id/deleteIcon"
+                android:src="@drawable/delete"/>
+            <!--            <Button-->
+            <!--                android:layout_width="wrap_content"-->
+            <!--                android:layout_height="wrap_content"-->
+            <!--                android:id="@+id/btn_update_t"-->
+            <!--                android:text="@string/btn_update_list_t"-->
+            <!--                android:textAllCaps="false"-->
+            <!--                android:layout_marginLeft="10dp"-->
+            <!--                android:layout_marginRight="25dp"-->
+            <!--                android:layout_marginTop="5dp"/>-->
+            <!--            <Button-->
+            <!--                android:layout_width="wrap_content"-->
+            <!--                android:layout_height="wrap_content"-->
+            <!--                android:id="@+id/btn_delete_t"-->
+            <!--                android:text="@string/btn_delete_record_t"-->
+            <!--                android:layout_marginLeft="@+id/btn_update_t"-->
+            <!--                android:textAllCaps="false"-->
+            <!--                android:layout_marginRight="5dp"-->
+            <!--                android:layout_marginTop="5dp"/>-->
+        </LinearLayout>
+
+    </RelativeLayout>
+
+
+
+</androidx.cardview.widget.CardView>
