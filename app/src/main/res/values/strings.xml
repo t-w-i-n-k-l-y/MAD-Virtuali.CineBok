@@ -19,8 +19,7 @@
     <string name="menu_signout">Logout</string>
 
 
-
-<!--    T     -->
+    <!--    T     -->
     <string name="btn_book_home_t">Book now</string>
     <string name="tv_opt_vip_t">Want to experience VIP cinema?</string>
     <string name="btn_vip_book_home_t">Book VIP cinema</string>
@@ -54,4 +53,56 @@
     <string name="btn_schedule_management">Schedule Management</string>
     <string name="btn_snack_management">Snack and Beverage Management</string>
     <string name="action_admin">Admin</string>
+
+
+    <!--Hall Management Strings-->
+
+   <!-- <string name="app_name">CineApp</string>-->
+    <string name="hType1">VIP</string>
+    <string name="hType2">NON VIP Hall</string>
+    <string name="h1">Araliya Hall</string>
+    <string name="h2">Lake Side Hall</string>
+    <string name="h3">Nayomi Hall</string>
+    <string name="h4">Adwi Hall</string>
+    <string name="textT1">8.30-10.30</string>
+    <string name="textT2">10.30-12.30</string>
+    <string name="textT3">18.30-20.30</string>
+    <string name="btn1">Save And Next</string>
+    <string name="txtV1">Select Your Hall</string>
+    <string name="txtSeV1">Your Hall Details</string>
+    <string name="txtSeV2">Your ID</string>
+    <string name="txtSev3">Hall Name</string>
+    <string name="txtSeV4">Hall Type</string>
+    <string name="txtSeV5">Total AAmount Of Payable</string>
+    <string name="btnSe1">Delete My Data</string>
+    <string name="btnSe2">Pay</string>
+    <string name="txtVTh1">Total Amount Of Payment</string>
+    <string name="txtThV2">Pay With</string>
+    <string name="txtThV3">Credit Debit Card</string>
+    <string name="rdbtn1">Visa</string>
+    <string name="rdbtn2">Master</string>
+    <string name="rdbtn3">Amex</string>
+    <string name="txtThV4">Mobile Wallet</string>
+    <string name="rdbtn4">Ez Cash</string>
+    <string name="rdbtn5">Mcash</string>
+    <string name="rdbtn6">genie</string>
+    <string name="txtThV5">Internet Banking</string>
+    <string name="rdbtn7">Sampath Vishwa</string>
+    <string name="btnTh1">Next</string>
+    <string name="txtSeV6">Update</string>
+    <string name="txtSeV7">Update</string>
+    <string name="txtFV1">Total Amount Of Payment</string>
+    <string name="txtFV2" />
+    <string name="txtFV3">Card Details</string>
+    <string name="txtIn1">Name On Card</string>
+    <string name="txtIn2">Card Number</string>
+    <string name="txtInNum">CVV</string>
+    <string name="txtFV4">CVV</string>
+    <string name="txtl3">CVV</string>
+    <string name="txtl4">Card Expiry(MM/YY)</string>
+    <string name="btnF1">Pay</string>
+    <string name="btnFif1">View My Hall Details</string>
+    <string name="btnFif2">Return To Home</string>
+    <string name="btnFif3">Update My Data</string>
+    <string name="btnFif4">Delete My Data</string>
 </resources>
