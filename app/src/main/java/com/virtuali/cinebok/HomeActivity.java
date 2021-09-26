@@ -2,6 +2,8 @@ package com.virtuali.cinebok;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.Menu;
 
@@ -21,6 +23,7 @@ public class HomeActivity extends AppCompatActivity {
 
     private AppBarConfiguration mAppBarConfiguration;
     private ActivityHomeBinding binding;
+    MenuItem admin;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -50,11 +53,26 @@ public class HomeActivity extends AppCompatActivity {
         NavigationUI.setupWithNavController(navigationView, navController);
     }
 
+
+
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
+
         getMenuInflater().inflate(R.menu.home, menu);
         return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        // Handle item selection
+        switch (item.getItemId()) {
+            case R.id.action_admin:
+                gotoAdminHome();
+                return true;
+            default:
+                return super.onOptionsItemSelected(item);
+        }
     }
 
     @Override
@@ -68,4 +86,10 @@ public class HomeActivity extends AppCompatActivity {
         Intent intent = new Intent(this, VipMoviesActivity.class);
         startActivity(intent);
     }
+
+    public void gotoAdminHome(){
+        Intent intent = new Intent(this, AdminHomeActivity.class);
+        startActivity(intent);
+    }
+
 }
