@@ -2,7 +2,10 @@ package com.virtuali.cinebok;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
+import android.widget.SearchView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -10,6 +13,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.firebase.ui.database.FirebaseRecyclerOptions;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -21,61 +26,84 @@ import java.util.ArrayList;
 
 public class SnackBeverageActivity extends AppCompatActivity {
 
-    RecyclerView recyclerView;
-    DatabaseReference database;
-    SnackBeverageAdapterCus myAdapter;
-    ArrayList<SnackBeverage> list;
+    RecyclerView recview;
+    SnackBeverageAdapterCus adapter;
+    FloatingActionButton fb;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_snack_beverage);
+        setTitle("Search here..");
 
-        recyclerView = findViewById(R.id.recview);
-        database = FirebaseDatabase.getInstance().getReference().child("SnackBeverage");
-        recyclerView.setHasFixedSize(true);
-        recyclerView.setLayoutManager(new LinearLayoutManager(this));
+        recview=(RecyclerView)findViewById(R.id.recview);
+        recview.setLayoutManager(new LinearLayoutManager(this));
 
-        list = new ArrayList<>();
-        myAdapter = new SnackBeverageAdapterCus(this, list);
-        recyclerView.setAdapter(myAdapter);
+        FirebaseRecyclerOptions<SnackBeverage> options =
+                new FirebaseRecyclerOptions.Builder<SnackBeverage>()
+                        .setQuery(FirebaseDatabase.getInstance().getReference().child("SnackBeverage"), SnackBeverage.class)
+                        .build();
 
-        database.addValueEventListener(new ValueEventListener() {
+        adapter=new SnackBeverageAdapterCus(options);
+        recview.setAdapter(adapter);
+
+    }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+        adapter.startListening();
+    }
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+        adapter.stopListening();
+    }
+
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu)
+    {
+        getMenuInflater().inflate(R.menu.searchmenu,menu);
+
+        MenuItem item=menu.findItem(R.id.search_snack_t);
+
+        SearchView searchView=(SearchView)item.getActionView();
+
+        searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener()
+        {
             @Override
-            public void onDataChange(@NonNull DataSnapshot snapshot) {
+            public boolean onQueryTextSubmit(String s) {
 
-                for (DataSnapshot dataSnapshot : snapshot.getChildren()) {
-
-                    if (dataSnapshot.hasChildren()) {
-                        SnackBeverage sb = new SnackBeverage();
-                        sb.setSbName(dataSnapshot.child("sbName").getValue().toString());
-                        sb.setSbSize(dataSnapshot.child("sbSize").getValue().toString());
-                        sb.setSbPrice(dataSnapshot.child("sbPrice").getValue().toString());
-                        sb.setSbAvailability(dataSnapshot.child("sbAvailability").getValue().toString());
-                        sb.setSbUrl(dataSnapshot.child("sbUrl").getValue().toString());
-
-                        list.add(sb);
-                    } else
-                        Toast.makeText(getApplicationContext(), "No Source to Display", Toast.LENGTH_SHORT).show();
-
-
-                }
-                myAdapter.notifyDataSetChanged();
-
+                processsearch(s);
+                return false;
             }
 
             @Override
-            public void onCancelled(@NonNull @org.jetbrains.annotations.NotNull DatabaseError error) {
-
+            public boolean onQueryTextChange(String s) {
+                processsearch(s);
+                return false;
             }
         });
 
+        return super.onCreateOptionsMenu(menu);
+    }
 
+    private void processsearch(String s)
+    {
+        FirebaseRecyclerOptions<SnackBeverage> options =
+                new FirebaseRecyclerOptions.Builder<SnackBeverage>()
+                        .setQuery(FirebaseDatabase.getInstance().getReference().child("SnackBeverage").orderByChild("sbName").startAt(s).endAt(s+"\uf8ff"), SnackBeverage.class)
+                        .build();
+
+        adapter=new SnackBeverageAdapterCus(options);
+        adapter.startListening();
+        recview.setAdapter(adapter);
 
     }
 
     public void gotocheckout(View view){
         Intent intent = new Intent(this, VipCheckoutActivity.class);
         startActivity(intent);
-    }
-}
+    }}

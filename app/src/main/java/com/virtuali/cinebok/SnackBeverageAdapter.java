@@ -16,8 +16,11 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
+import com.firebase.ui.database.FirebaseRecyclerAdapter;
+import com.firebase.ui.database.FirebaseRecyclerOptions;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.orhanobut.dialogplus.DialogPlus;
 import com.orhanobut.dialogplus.ViewHolder;
@@ -31,109 +34,69 @@ import java.util.Map;
 
 import de.hdodenhof.circleimageview.CircleImageView;
 
-public class SnackBeverageAdapter extends RecyclerView.Adapter<SnackBeverageAdapter.MyViewHolder> {
+public class SnackBeverageAdapter extends FirebaseRecyclerAdapter<SnackBeverage, SnackBeverageAdapter.myviewholder> {
 
-    Context context;
-
-    ArrayList<SnackBeverage> list;
-
-
-    public SnackBeverageAdapter(Context context, ArrayList<SnackBeverage> list) {
-        this.context = context;
-        this.list = list;
-    }
-
-    public SnackBeverageAdapter(ArrayList<SnackBeverage> list) {
-
-        this.list = list;
-    }
-
-    @NonNull
-    @Override
-    public MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View v = LayoutInflater.from(context).inflate(R.layout.snack_item,parent,false);
-        return  new MyViewHolder(v);
+    public SnackBeverageAdapter(@NonNull FirebaseRecyclerOptions<SnackBeverage> options)
+    {
+        super(options);
     }
 
     @Override
-//    public void onBindViewHolder(@NonNull @NotNull MyViewHolder holder, int position) {
-//        SnackBeverage sb = list.get(position);
-//        holder.name.setText(sb.getSbName());
-//        holder.size.setText(sb.getSbSize());
-//        holder.price.setText(sb.getSbPrice());
-//        holder.availability.setText(sb.getSbAvailability());
-//        Glide.with(holder.img.getContext()).load(sb.getSbUrl()).into(holder.img);
-//    }
-
-//    @Override
-//    public void onBindViewHolder(@NonNull @NotNull MyViewHolder holder, int position, @NonNull @NotNull List<Object> payloads) {
-//        super.onBindViewHolder(holder, position, payloads);
-//    }
-
-//    @Override
-    public void onBindViewHolder(@NonNull @NotNull MyViewHolder holder, final int position) {
-
-        SnackBeverage sb = list.get(position);
-        holder.name.setText(sb.getSbName());
-        holder.size.setText(sb.getSbSize());
-        holder.price.setText(sb.getSbPrice());
-        holder.availability.setText(sb.getSbAvailability());
-        Glide.with(holder.img.getContext()).load(sb.getSbUrl()).into(holder.img);
-
+    protected void onBindViewHolder(@NonNull final myviewholder holder, final int position, @NonNull final SnackBeverage model)
+    {
+        holder.name.setText(model.getSbName());
+        holder.size.setText(model.getSbSize());
+        holder.price.setText(model.getSbPrice());
+        holder.availability.setText(model.getSbAvailability());
+        Glide.with(holder.img.getContext()).load(model.getSbUrl()).into(holder.img);
 
         holder.edit.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v) {
-                final DialogPlus dialogPlus = DialogPlus.newDialog(holder.img.getContext())
-                        .setContentHolder(new ViewHolder(R.layout.activity_update_snack_list))
-                        .setExpanded(true, 1500)
+            public void onClick(View view) {
+                final DialogPlus dialogPlus=DialogPlus.newDialog(holder.img.getContext())
+                        .setContentHolder(new ViewHolder(R.layout.dialogcontent))
+                        .setExpanded(true,1500)
                         .create();
 
-                //dialogPlus.show();
+                View myview=dialogPlus.getHolderView();
 
-                View view = dialogPlus.getHolderView();
+                final EditText name = myview.findViewById(R.id.et_sb_name_t);
+                final EditText size = myview.findViewById(R.id.et_sb_size_t);
+                final EditText price = myview.findViewById(R.id.et_sb_price_t);
+                final EditText availability = myview.findViewById(R.id.et_sb_availability_t);
+                final EditText url = myview.findViewById(R.id.et_sb_url_t);
+                Button update = myview.findViewById(R.id.btn_update_t);
 
-                EditText name = view.findViewById(R.id.et_sb_name_t);
-                EditText size = view.findViewById(R.id.et_sb_size_t);
-                EditText price = view.findViewById(R.id.et_sb_price_t);
-                EditText availability = view.findViewById(R.id.et_sb_availability_t);
-                EditText url = view.findViewById(R.id.et_sb_url_t);
-
-                Button update = view.findViewById(R.id.btn_update_t);
-
-                name.setText(sb.getSbName());
-                size.setText(sb.getSbSize());
-                price.setText(sb.getSbPrice());
-                availability.setText(sb.getSbAvailability());
-                url.setText(sb.getSbUrl());
+                name.setText(model.getSbName());
+                size.setText(model.getSbSize());
+                price.setText(model.getSbPrice());
+                availability.setText(model.getSbAvailability());
+                url.setText(model.getSbUrl());
 
                 dialogPlus.show();
 
-
-                update.setOnClickListener(new View.OnClickListener() {
+                update.setOnClickListener(new  View.OnClickListener() {
                     @Override
-                    public void onClick(View v) {
-                        Map<String, Object> map = new HashMap<>();
+                    public void onClick(View view) {
+                        Map<String,Object> map=new HashMap<>();
                         map.put("sbName", name.getText().toString());
                         map.put("sbSize", size.getText().toString());
                         map.put("sbPrice", price.getText().toString());
                         map.put("sbAvailability", availability.getText().toString());
                         map.put("sbUrl", url.getText().toString());
 
-
-                        FirebaseDatabase.getInstance().getReference().child("SnackBeverage")
-                                .child(String.valueOf(getItemId(position))).updateChildren(map)
+                        FirebaseDatabase.getInstance().getReference().child("students")
+                                .child(getRef(position).getKey()).updateChildren(map)
                                 .addOnSuccessListener(new OnSuccessListener<Void>() {
                                     @Override
-                                    public void onSuccess(Void unused) {
+                                    public void onSuccess(Void aVoid) {
                                         Toast.makeText(holder.name.getContext(), "Updated Successfully!", Toast.LENGTH_SHORT).show();
-
                                         dialogPlus.dismiss();
                                     }
                                 })
                                 .addOnFailureListener(new OnFailureListener() {
                                     @Override
-                                    public void onFailure(@NonNull @NotNull Exception e) {
+                                    public void onFailure(@NonNull Exception e) {
                                         Toast.makeText(holder.name.getContext(), "Error while updating", Toast.LENGTH_SHORT).show();
                                         dialogPlus.dismiss();
                                     }
@@ -141,21 +104,23 @@ public class SnackBeverageAdapter extends RecyclerView.Adapter<SnackBeverageAdap
                     }
                 });
 
+
             }
         });
 
+
         holder.delete.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v) {
-                AlertDialog.Builder builder = new AlertDialog.Builder(holder.name.getContext());
-                builder.setTitle("Are you sure?");
-                builder.setMessage("Deleted data can't be undo.");
+            public void onClick(View view) {
+                AlertDialog.Builder builder=new AlertDialog.Builder(holder.img.getContext());
+                builder.setTitle("Delete Panel");
+                builder.setMessage("Delete...?");
 
-                builder.setPositiveButton("Delete", new DialogInterface.OnClickListener() {
+                builder.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
                     @Override
-                    public void onClick(DialogInterface dialog, int which) {
-                        FirebaseDatabase.getInstance().getReference().child("SnackBeverage")
-                                .child(String.valueOf(getItemId(position))).removeValue()
+                    public void onClick(DialogInterface dialogInterface, int i) {
+                        FirebaseDatabase.getInstance().getReference().child("students")
+                                .child(getRef(position).getKey()).removeValue()
                                 .addOnSuccessListener(new OnSuccessListener<Void>() {
                                     @Override
                                     public void onSuccess(Void unused) {
@@ -168,13 +133,12 @@ public class SnackBeverageAdapter extends RecyclerView.Adapter<SnackBeverageAdap
                                         Toast.makeText(holder.name.getContext(), "Error while deleting", Toast.LENGTH_SHORT).show();
                                     }
                                 });
-
                     }
                 });
 
                 builder.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
                     @Override
-                    public void onClick(DialogInterface dialog, int which) {
+                    public void onClick(DialogInterface dialogInterface, int i) {
                         Toast.makeText(holder.name.getContext(), "Cancelled", Toast.LENGTH_SHORT).show();
                     }
                 });
@@ -183,22 +147,24 @@ public class SnackBeverageAdapter extends RecyclerView.Adapter<SnackBeverageAdap
             }
         });
 
+    } // End of OnBindViewMethod
 
-    }
-
+    @NonNull
     @Override
-    public int getItemCount() {
-        return list.size();
+    public myviewholder onCreateViewHolder(@NonNull ViewGroup parent, int viewType)
+    {
+        View view= LayoutInflater.from(parent.getContext()).inflate(R.layout.snack_item,parent,false);
+        return new myviewholder(view);
     }
 
-    public static class MyViewHolder extends RecyclerView.ViewHolder{
-
+    static class myviewholder extends RecyclerView.ViewHolder
+    {
         TextView name, size, price, availability;
         CircleImageView img;
         //        Button update, delete;
         ImageView edit, delete;
 
-        public MyViewHolder(@NonNull View itemView) {
+        public myviewholder(@NonNull View itemView) {
             super(itemView);
 
             name = itemView.findViewById(R.id.tv_name_snack_t);
@@ -212,7 +178,6 @@ public class SnackBeverageAdapter extends RecyclerView.Adapter<SnackBeverageAdap
 
             edit=(ImageView)itemView.findViewById(R.id.editIcon);
             delete=(ImageView)itemView.findViewById(R.id.deleteIcon);
-
         }
     }
 

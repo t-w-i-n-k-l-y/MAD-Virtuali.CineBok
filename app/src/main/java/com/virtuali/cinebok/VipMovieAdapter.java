@@ -10,76 +10,50 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.firebase.ui.database.FirebaseRecyclerAdapter;
+import com.firebase.ui.database.FirebaseRecyclerOptions;
 import com.virtuali.cinebok.model.ScheduleVip;
 
 import org.jetbrains.annotations.NotNull;
 
 import java.util.ArrayList;
 
-public class VipMovieAdapter extends RecyclerView.Adapter<VipMovieAdapter.MyViewHolder> {
-
-    Context context;
-    ArrayList<ScheduleVip> list;
+public class VipMovieAdapter extends FirebaseRecyclerAdapter<ScheduleVip,VipMovieAdapter.myviewholder> {
 
 
-    public VipMovieAdapter(Context context, ArrayList<ScheduleVip> list) {
-        this.context = context;
-        this.list = list;
+    public VipMovieAdapter(@NonNull FirebaseRecyclerOptions<ScheduleVip> options)
+    {
+        super(options);
     }
 
-    public VipMovieAdapter(ArrayList<ScheduleVip> list) {
+    @Override
+    protected void onBindViewHolder(@NonNull final myviewholder holder, final int position, @NonNull final ScheduleVip model)
+    {
+        holder.Mname.setText("Movie Name: " + model.getmName());
+        holder.Hname.setText("Hall Name: " + model.gethName());
+        holder.duration.setText("Duration: " + model.getDuration());
+        holder.date.setText("Date: " + model.getDate());
+        holder.time.setText("Time: " + model.getTime());
+        holder.Tprice.setText("Ticket Price: " + model.gettPrice());
+//        Glide.with(holder.img.getContext()).load(sb.getSbUrl()).into(holder.img);
 
-        this.list = list;
-    }
+    } // End of OnBindViewMethod
 
     @NonNull
     @Override
-    public MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View v = LayoutInflater.from(context).inflate(R.layout.movie_item,parent,false);
-        return  new MyViewHolder(v);
+    public myviewholder onCreateViewHolder(@NonNull ViewGroup parent, int viewType)
+    {
+        View view= LayoutInflater.from(parent.getContext()).inflate(R.layout.movie_item,parent,false);
+        return new myviewholder(view);
     }
 
-//    @Override
-//    public void onBindViewHolder(@NonNull @NotNull MyViewHolder holder, int position) {
-//        SnackBeverage sb = list.get(position);
-//        holder.name.setText(sb.getSbName());
-//        holder.size.setText(sb.getSbSize());
-//        holder.price.setText(sb.getSbPrice());
-//        holder.availability.setText(sb.getSbAvailability());
-//        Glide.with(holder.img.getContext()).load(sb.getSbUrl()).into(holder.img);
-//    }
 
-//    @Override
-//    public void onBindViewHolder(@NonNull @NotNull MyViewHolder holder, int position, @NonNull @NotNull List<Object> payloads) {
-//        super.onBindViewHolder(holder, position, payloads);
-//    }
-
-    //    @Override
-    public void onBindViewHolder(@NonNull @NotNull MyViewHolder holder, final int position) {
-
-        ScheduleVip sv = list.get(position);
-        holder.Mname.setText("Movie Name: " + sv.getmName());
-        holder.Hname.setText("Hall Name: " + sv.gethName());
-        holder.duration.setText("Duration: " + sv.getDuration());
-        holder.date.setText("Date: " + sv.getDate());
-        holder.time.setText("Time" + sv.getTime());
-        holder.Tprice.setText("Ticket Price: " + sv.gettPrice());
-//        Glide.with(holder.img.getContext()).load(sb.getSbUrl()).into(holder.img);
-
-
-    }
-
-    @Override
-    public int getItemCount() {
-        return list.size();
-    }
-
-    public static class MyViewHolder extends RecyclerView.ViewHolder{
+    public static class myviewholder extends RecyclerView.ViewHolder{
 
         TextView Mname, Hname, duration, date, time, Tprice;
         Button book;
 
-        public MyViewHolder(@NonNull View itemView) {
+        public myviewholder(@NonNull View itemView) {
             super(itemView);
 
             Mname = itemView.findViewById(R.id.tv_name_vip_t);

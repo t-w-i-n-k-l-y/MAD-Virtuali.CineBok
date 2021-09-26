@@ -7,118 +7,16 @@
     android:onClick="gotocheckout"
     tools:context=".SnackBeverageActivity">
 
-    <ScrollView
-        android:id="@+id/sv_vip_movies_t"
-        android:layout_width="413dp"
-        android:layout_height="551dp"
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recview"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
-
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/recview"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.0" />
-
-        <!--        <LinearLayout-->
-        <!--            android:id="@+id/Container_1_t"-->
-        <!--            android:layout_width="wrap_content"-->
-        <!--            android:layout_height="wrap_content"-->
-        <!--            android:orientation="vertical">-->
-
-
-        <!--            <ImageView-->
-        <!--                android:id="@+id/iv_snack_01_t"-->
-        <!--                android:layout_width="wrap_content"-->
-        <!--                android:layout_height="200dp"-->
-        <!--                android:contentDescription="Pop Corn - salted"-->
-        <!--                android:src="@drawable/popcorn1" />-->
-
-        <!--            <TextView-->
-        <!--                android:id="@+id/tv_snack_1_t"-->
-        <!--                android:layout_width="match_parent"-->
-        <!--                android:layout_height="wrap_content"-->
-        <!--                android:layout_gravity="center_horizontal"-->
-        <!--                android:text="Pop corn - salted\nPrice: Rs150.00"-->
-        <!--                android:textAlignment="center"-->
-        <!--                android:textColor="#020000"-->
-        <!--                android:textSize="16sp" />-->
-
-        <!--            <EditText-->
-        <!--                android:id="@+id/et_snack_count1_t"-->
-        <!--                android:layout_width="100dp"-->
-        <!--                android:layout_height="wrap_content"-->
-        <!--                android:layout_gravity="center_horizontal"-->
-        <!--                android:ems="10"-->
-        <!--                android:hint="0"-->
-        <!--                android:inputType="numberSigned"-->
-        <!--                android:textAlignment="center" />-->
-
-        <!--            <ImageView-->
-        <!--                android:id="@+id/iv_snack_02_t"-->
-        <!--                android:layout_width="wrap_content"-->
-        <!--                android:layout_height="200dp"-->
-        <!--                android:contentDescription="Pop Corn - caramel"-->
-        <!--                android:src="@drawable/popcorn_caramel" />-->
-
-        <!--            <TextView-->
-        <!--                android:id="@+id/tv_snack_2_t"-->
-        <!--                android:layout_width="match_parent"-->
-        <!--                android:layout_height="wrap_content"-->
-        <!--                android:layout_gravity="center_horizontal"-->
-        <!--                android:text="Pop corn - caramel\nPrice: Rs.250.00"-->
-        <!--                android:textAlignment="center"-->
-        <!--                android:textColor="#020000"-->
-        <!--                android:textSize="16sp" />-->
-
-        <!--            <EditText-->
-        <!--                android:id="@+id/et_snack_count2_t"-->
-        <!--                android:layout_width="100dp"-->
-        <!--                android:layout_height="wrap_content"-->
-        <!--                android:layout_gravity="center_horizontal"-->
-        <!--                android:ems="10"-->
-        <!--                android:hint="0"-->
-        <!--                android:inputType="numberSigned"-->
-        <!--                android:textAlignment="center" />-->
-
-        <!--            <ImageView-->
-        <!--                android:id="@+id/iv_snack_03_t"-->
-        <!--                android:layout_width="wrap_content"-->
-        <!--                android:layout_height="200dp"-->
-        <!--                android:contentDescription="coke"-->
-        <!--                android:onClick="gotocheckout"-->
-        <!--                android:src="@drawable/coke1" />-->
-
-        <!--            <TextView-->
-        <!--                android:id="@+id/tv_snack_3_t"-->
-        <!--                android:layout_width="match_parent"-->
-        <!--                android:layout_height="wrap_content"-->
-        <!--                android:layout_gravity="center_horizontal"-->
-        <!--                android:text="coke\nPrice: Rs.100.00"-->
-        <!--                android:textAlignment="center"-->
-        <!--                android:textColor="#020000"-->
-        <!--                android:textSize="16sp" />-->
-
-        <!--            <EditText-->
-        <!--                android:id="@+id/et_snack_count3_t"-->
-        <!--                android:layout_width="100dp"-->
-        <!--                android:layout_height="wrap_content"-->
-        <!--                android:layout_gravity="center_horizontal"-->
-        <!--                android:ems="10"-->
-        <!--                android:hint="0"-->
-        <!--                android:inputType="numberSigned"-->
-        <!--                android:textAlignment="center" />-->
-
-        <!--        </LinearLayout>-->
-    </ScrollView>
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
 
     <Button
         android:id="@+id/btn_confirm2_t"
@@ -134,7 +32,4 @@
         android:textAlignment="center"
         android:textColor="#FFFFFF"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/sv_vip_movies_t" />
-
-</androidx.constraintlayout.widget.ConstraintLayout>
+        app:layout_constraintEnd_toEndOf="parent" /></androidx.constraintlayout.widget.ConstraintLayout>
