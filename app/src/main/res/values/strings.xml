@@ -54,4 +54,6 @@
     <string name="btn_schedule_management">Schedule Management</string>
     <string name="btn_snack_management">Snack and Beverage Management</string>
     <string name="action_admin">Admin</string>
+    <string name="btn_back_t">Back to movie list</string>
+    <string name="itemCount">0</string>
 </resources>
