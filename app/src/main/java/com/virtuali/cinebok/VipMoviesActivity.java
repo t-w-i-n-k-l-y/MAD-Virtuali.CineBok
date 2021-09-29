@@ -89,8 +89,11 @@ public class VipMoviesActivity extends AppCompatActivity {
     private void processsearch(String s) {
         FirebaseRecyclerOptions<ScheduleVip> options =
                 new FirebaseRecyclerOptions.Builder<ScheduleVip>()
-                        .setQuery(FirebaseDatabase.getInstance().getReference().child("test_t").orderByChild("mName").startAt(s).endAt(s + "\uf8ff"), ScheduleVip.class)
-                        .build();
+                        .setQuery(FirebaseDatabase.getInstance().getReference().child("test_t")
+                                .orderByChild("mName")
+                                .startAt(s)
+                                .endAt(s + "\uf8ff"), ScheduleVip.class)
+                                .build();
 
         adapter = new VipMovieAdapter(options);
         adapter.startListening();
@@ -99,10 +102,8 @@ public class VipMoviesActivity extends AppCompatActivity {
     }
 
     //to move to booking activity - pass tPrice
-    public void gotomovieDet(View view) {
-        Intent intent = new Intent(this, VipBookingActivity.class);
-        intent.putExtra("tPrice", 1000);
-
-        startActivity(intent);
-    }
+//    public void gotomovieDet(View view) {
+//        Intent intent = new Intent(this, VipBookingActivity.class);
+//        startActivity(intent);
+//    }
 }

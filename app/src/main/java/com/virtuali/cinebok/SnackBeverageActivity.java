@@ -20,6 +20,7 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
+import com.virtuali.cinebok.model.GlobalClass;
 import com.virtuali.cinebok.model.SnackBeverage;
 
 import java.util.ArrayList;
@@ -30,10 +31,17 @@ public class SnackBeverageActivity extends AppCompatActivity {
     SnackBeverageAdapterCus adapter;
     FloatingActionButton fb;
 
+
+    String ticketTot;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_snack_beverage);
+
+        Intent i = getIntent();
+        ticketTot = i.getExtras().getString("TicketTot");
+
         setTitle("Search here..");
 
         recview=(RecyclerView)findViewById(R.id.recview);
@@ -94,8 +102,11 @@ public class SnackBeverageActivity extends AppCompatActivity {
     {
         FirebaseRecyclerOptions<SnackBeverage> options =
                 new FirebaseRecyclerOptions.Builder<SnackBeverage>()
-                        .setQuery(FirebaseDatabase.getInstance().getReference().child("SnackBeverage").orderByChild("sbName").startAt(s).endAt(s+"\uf8ff"), SnackBeverage.class)
-                        .build();
+                        .setQuery(FirebaseDatabase.getInstance().getReference().child("SnackBeverage")
+                                .orderByChild("sbName")
+                                .startAt(s)
+                                .endAt(s+"\uf8ff"), SnackBeverage.class)
+                                .build();
 
         adapter=new SnackBeverageAdapterCus(options);
         adapter.startListening();
@@ -105,5 +116,6 @@ public class SnackBeverageActivity extends AppCompatActivity {
 
     public void gotocheckout(View view){
         Intent intent = new Intent(this, VipCheckoutActivity.class);
+        intent.putExtra("TicketTot", ticketTot);
         startActivity(intent);
     }}

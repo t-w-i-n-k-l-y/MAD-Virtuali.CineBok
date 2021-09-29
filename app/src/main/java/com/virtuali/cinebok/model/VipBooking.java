@@ -2,35 +2,78 @@ package com.virtuali.cinebok.model;
 
 public class VipBooking {
 
-    String CusName, hName, mName;
-    double tPrice, tTotal, sTotal, Total;
+    //String CusName, hName, mName;
+    double tPrice;
+    //double tTotal, sTotal, Total;
     int noTickets;
 
     public VipBooking() {
     }
 
-    public String getCusName() {
-        return CusName;
+//    public String getCusName() {
+//        return CusName;
+//    }
+//
+//    public void setCusName(String cusName) {
+//        CusName = cusName;
+//    }
+//
+//    public String gethName() {
+//        return hName;
+//    }
+//
+//    public void sethName(String hName) {
+//        this.hName = hName;
+//    }
+//
+//    public String getmName() {
+//        return mName;
+//    }
+//
+//    public void setmName(String mName) {
+//        this.mName = mName;
+//    }
+//
+//    public String gettTotal() {
+//        return String.valueOf(tTotal);
+//    }
+//
+//    public void settTotal(String tTotal) {
+//        this.tTotal = Double.parseDouble(tTotal);
+//    }
+
+//    public String getsTotal() {
+//        return String.valueOf(sTotal);
+//    }
+//
+//    public void setsTotal(String sTotal) {
+//        this.sTotal = Double.parseDouble(sTotal);
+//    }
+//
+//    public String getTotal() {
+//        return String.valueOf(Total);
+//    }
+//
+//    public void setTotal(String total) {
+//        Total = Double.parseDouble(total);
+//    }
+//
+//    public String getTotalForTickets () {
+//        this.tTotal = this.noTickets * this.tPrice;
+//
+//        return String.valueOf(this.tTotal);
+//    }
+//
+//    public String getTotal_st (){
+//        return String.valueOf(tTotal + sTotal);
+//    }
+
+    public String getNoTickets() {
+        return String.valueOf(noTickets);
     }
 
-    public void setCusName(String cusName) {
-        CusName = cusName;
-    }
-
-    public String gethName() {
-        return hName;
-    }
-
-    public void sethName(String hName) {
-        this.hName = hName;
-    }
-
-    public String getmName() {
-        return mName;
-    }
-
-    public void setmName(String mName) {
-        this.mName = mName;
+    public void setNoTickets(String noTickets) {
+        this.noTickets = Integer.parseInt(noTickets);
     }
 
     public String gettPrice() {
@@ -41,48 +84,9 @@ public class VipBooking {
         this.tPrice = Double.parseDouble(tPrice);
     }
 
-    public String gettTotal() {
-        return String.valueOf(tTotal);
+    public String getTicketTot(){
+        return String.valueOf(this.noTickets * this.tPrice);
     }
-
-    public void settTotal(String tTotal) {
-        this.tTotal = Double.parseDouble(tTotal);
-    }
-
-    public String getNoTickets() {
-        return String.valueOf(noTickets);
-    }
-
-    public void setNoTickets(String noTickets) {
-        this.noTickets = Integer.parseInt(noTickets);
-    }
-
-    public String getsTotal() {
-        return String.valueOf(sTotal);
-    }
-
-    public void setsTotal(String sTotal) {
-        this.sTotal = Double.parseDouble(sTotal);
-    }
-
-    public String getTotal() {
-        return String.valueOf(Total);
-    }
-
-    public void setTotal(String total) {
-        Total = Double.parseDouble(total);
-    }
-
-    public String getTotalForTickets () {
-        this.tTotal = this.noTickets * this.tPrice;
-
-        return String.valueOf(this.tTotal);
-    }
-
-    public String getTotal_st (){
-        return String.valueOf(tTotal + sTotal);
-    }
-
 
 }
 

@@ -44,12 +44,12 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
-        android:layout_marginEnd="64dp"
-        android:layout_marginRight="64dp"
         android:layout_marginBottom="96dp"
         android:text="@string/btn_confirm_t"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/btn_back_t"
         app:layout_constraintTop_toBottomOf="@+id/tv_tot_t"
         app:layout_constraintVertical_bias="0.884" />
 
@@ -88,5 +88,18 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/tv_tot_t" />
+
+    <Button
+        android:id="@+id/btn_back_t"
+        style="@android:style/Widget.Material.Button.Borderless.Colored"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="gotomovieList"
+        android:text="@string/btn_back_t"
+        android:textColor="@color/navy_blue"
+        app:layout_constraintBaseline_toBaselineOf="@+id/btn_confirm_t"
+        app:layout_constraintEnd_toStartOf="@+id/btn_confirm_t"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
