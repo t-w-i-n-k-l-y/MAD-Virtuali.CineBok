@@ -18,7 +18,8 @@ public class MainActivity extends AppCompatActivity {
         handler.postDelayed(new Runnable() {
             public void run() {
                 // TODO: Your application init goes here.
-                Intent mInHome = new Intent(MainActivity.this, HomeActivity.class);
+              //  Intent mInHome = new Intent(MainActivity.this, HomeActivity.class);
+                Intent mInHome = new Intent(MainActivity.this, Login.class);
                 startActivity(mInHome);
                 finish();
             }
