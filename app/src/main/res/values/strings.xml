@@ -110,4 +110,16 @@
     <string name="btn_back_t">Back to movie list</string>
     <string name="itemCount">0</string>
 
+    <!---schedule-->
+
+    <string name="txtv1_p">Movie-Name</string>
+    <string name="ET1_p">Enter movie name</string>
+    <string name="txtv2_p">Hall-Name</string>
+    <string name="ET2_p">Enter Halll  name</string>
+    <string name="txtv3_p">Time</string>
+    <string name="ET3_p">Available Time</string>
+    <string name="txtv4_p">Duration</string>
+    <string name="ET4_p">Movie Duration</string>
+    <string name="btn1_p">Add</string>
+
 </resources>

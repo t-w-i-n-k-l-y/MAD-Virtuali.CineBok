@@ -22,6 +22,12 @@ public class AdminHomeActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
+
+    public void schedulemanage(View view){
+        Intent intent = new Intent(this, AddSchedule.class);
+        startActivity(intent);
+    }
+
     public void gotomoviemanage(View view){
         Intent intentM = new Intent(this,MainActivityR.class);
         startActivity(intentM);
@@ -37,8 +43,6 @@ public class AdminHomeActivity extends AppCompatActivity {
 //
 //        }
 //    });
-
-
 
 
 }
