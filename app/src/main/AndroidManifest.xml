@@ -80,15 +80,11 @@
 
         <!--Hall Management Home-->
         <activity android:name=".HallDetails">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
 
 
-       <!-- Thursha's home commented due to test HallManagement <activity
+        <activity
             android:name=".MainActivity"
             android:theme="@style/Theme.CineBok.NoActionBar">
             <intent-filter>

@@ -17,4 +17,8 @@ public class AdminHomeActivity extends AppCompatActivity {
         Intent intent = new Intent(this, SnackMenuActivity.class);
         startActivity(intent);
     }
+    public void gotoHallManage(View view){
+        Intent intent = new Intent(this, HallDetails.class);
+        startActivity(intent);
+    }
 }
