@@ -17,4 +17,10 @@ public class AdminHomeActivity extends AppCompatActivity {
         Intent intent = new Intent(this, SnackMenuActivity.class);
         startActivity(intent);
     }
+
+    public void schedulemanage(View view){
+        Intent intent = new Intent(this, AddSchedule.class);
+        startActivity(intent);
+    }
+
 }

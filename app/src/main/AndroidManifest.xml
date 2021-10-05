@@ -78,17 +78,30 @@
                 android:value=".MainActivity" />
         </activity>
 
-        <!--Hall Management Home-->
-        <activity android:name=".HallDetails">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
+        <!---Schedule-->
+        <activity android:name=".getDetails"> </activity>
+        <activity android:name=".AddSchedule">
+<!--            <intent-filter>-->
+<!--                <action android:name="android.intent.action.MAIN" />-->
+
+<!--                <category android:name="android.intent.category.LAUNCHER" />-->
+<!--            </intent-filter>-->
         </activity>
 
 
-       <!-- Thursha's home commented due to test HallManagement <activity
+
+        <!--Hall Management Home-->
+        <activity android:name=".HallDetails">
+<!--            <intent-filter>-->
+<!--                <action android:name="android.intent.action.MAIN" />-->
+
+<!--                <category android:name="android.intent.category.LAUNCHER" />-->
+<!--            </intent-filter>-->
+        </activity>
+
+
+          <activity
             android:name=".MainActivity"
             android:theme="@style/Theme.CineBok.NoActionBar">
             <intent-filter>
@@ -96,7 +109,7 @@
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-        </activity>-->
+        </activity>
     </application>
 
 </manifest>
