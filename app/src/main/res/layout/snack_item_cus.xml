@@ -75,7 +75,7 @@
             android:layout_toRightOf="@id/img_snack1_t"
             android:hint="0"
             android:padding="15dp"
-            android:text="@string/itemCount" />
+            android:imeOptions="actionDone"/>
 
         <!--        <LinearLayout-->
         <!--            android:layout_width="match_parent"-->

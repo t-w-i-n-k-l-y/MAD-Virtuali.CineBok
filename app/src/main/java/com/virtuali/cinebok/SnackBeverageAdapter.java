@@ -3,6 +3,7 @@ package com.virtuali.cinebok;
 import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
+import android.content.SharedPreferences;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -36,6 +37,7 @@ import de.hdodenhof.circleimageview.CircleImageView;
 
 public class SnackBeverageAdapter extends FirebaseRecyclerAdapter<SnackBeverage, SnackBeverageAdapter.myviewholder> {
 
+
     public SnackBeverageAdapter(@NonNull FirebaseRecyclerOptions<SnackBeverage> options)
     {
         super(options);
@@ -60,11 +62,11 @@ public class SnackBeverageAdapter extends FirebaseRecyclerAdapter<SnackBeverage,
 
                 View myview=dialogPlus.getHolderView();
 
-                final EditText name = myview.findViewById(R.id.et_sb_name_t);
-                final EditText size = myview.findViewById(R.id.et_sb_size_t);
-                final EditText price = myview.findViewById(R.id.et_sb_price_t);
-                final EditText availability = myview.findViewById(R.id.et_sb_availability_t);
-                final EditText url = myview.findViewById(R.id.et_sb_url_t);
+                EditText name = myview.findViewById(R.id.et_sb_name_t);
+                EditText size = myview.findViewById(R.id.et_sb_size_t);
+                EditText price = myview.findViewById(R.id.et_sb_price_t);
+                EditText availability = myview.findViewById(R.id.et_sb_availability_t);
+                EditText url = myview.findViewById(R.id.et_sb_url_t);
                 Button update = myview.findViewById(R.id.btn_update_t);
 
                 name.setText(model.getSbName());
@@ -85,7 +87,7 @@ public class SnackBeverageAdapter extends FirebaseRecyclerAdapter<SnackBeverage,
                         map.put("sbAvailability", availability.getText().toString());
                         map.put("sbUrl", url.getText().toString());
 
-                        FirebaseDatabase.getInstance().getReference().child("students")
+                        FirebaseDatabase.getInstance().getReference().child("SnackBeverage")
                                 .child(getRef(position).getKey()).updateChildren(map)
                                 .addOnSuccessListener(new OnSuccessListener<Void>() {
                                     @Override
@@ -119,7 +121,7 @@ public class SnackBeverageAdapter extends FirebaseRecyclerAdapter<SnackBeverage,
                 builder.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialogInterface, int i) {
-                        FirebaseDatabase.getInstance().getReference().child("students")
+                        FirebaseDatabase.getInstance().getReference().child("SnackBeverage")
                                 .child(getRef(position).getKey()).removeValue()
                                 .addOnSuccessListener(new OnSuccessListener<Void>() {
                                     @Override
