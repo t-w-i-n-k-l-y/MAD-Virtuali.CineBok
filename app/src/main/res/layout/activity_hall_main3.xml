@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity3">
+
+    <View
+        android:id="@+id/divider2"
+        android:layout_width="409dp"
+        android:layout_height="1dp"
+        android:background="?android:attr/listDivider"
+        app:layout_constraintBottom_toTopOf="@+id/textView11"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtDeci" />
+
+    <TextView
+        android:id="@+id/textView10"
+        android:layout_width="177dp"
+        android:layout_height="30dp"
+        android:layout_marginStart="56dp"
+        android:layout_marginLeft="56dp"
+        android:layout_marginTop="20dp"
+        android:text="@string/txtVTh1"
+        app:layout_constraintBottom_toBottomOf="@+id/divider2"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.2" />
+
+    <EditText
+        android:id="@+id/txtDeci"
+        android:layout_width="93dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="68dp"
+        android:layout_marginLeft="68dp"
+        android:layout_marginTop="16dp"
+        android:ems="10"
+        android:inputType="numberDecimal"
+        app:layout_constraintStart_toEndOf="@+id/textView10"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView11"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="45dp"
+        android:layout_marginLeft="45dp"
+        android:layout_marginTop="42dp"
+        android:text="@string/txtThV2"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/divider2" />
+
+    <TextView
+        android:id="@+id/textView12"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="45dp"
+        android:layout_marginLeft="45dp"
+        android:layout_marginTop="48dp"
+        android:text="@string/txtThV3"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView11" />
+
+    <TextView
+        android:id="@+id/textView13"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="44dp"
+        android:layout_marginLeft="44dp"
+        android:layout_marginTop="76dp"
+        android:text="@string/txtThV4"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/radioButton13" />
+
+    <RadioButton
+        android:id="@+id/radioButton15"
+        android:layout_width="83dp"
+        android:layout_height="32dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginRight="16dp"
+        android:text="@string/rdbtn4"
+        app:layout_constraintBaseline_toBaselineOf="@+id/radioButton16"
+        app:layout_constraintEnd_toStartOf="@+id/radioButton16"
+        app:layout_constraintHorizontal_bias="0.77"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <RadioButton
+        android:id="@+id/radioButton16"
+        android:layout_width="88dp"
+        android:layout_height="34dp"
+        android:layout_marginEnd="24dp"
+        android:layout_marginRight="24dp"
+        android:text="@string/rdbtn5"
+        app:layout_constraintBaseline_toBaselineOf="@+id/radioButton17"
+        app:layout_constraintEnd_toStartOf="@+id/radioButton17" />
+
+    <RadioButton
+        android:id="@+id/radioButton17"
+        android:layout_width="82dp"
+        android:layout_height="35dp"
+        android:layout_marginEnd="44dp"
+        android:layout_marginRight="44dp"
+        android:text="@string/rdbtn6"
+        app:layout_constraintBottom_toTopOf="@+id/customer"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/radioButton14" />
+
+    <RadioButton
+        android:id="@+id/radioButton12"
+        android:layout_width="96dp"
+        android:layout_height="26dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginRight="20dp"
+        android:text="@string/rdbtn1"
+        app:layout_constraintBaseline_toBaselineOf="@+id/radioButton13"
+        app:layout_constraintEnd_toStartOf="@+id/radioButton13" />
+
+    <RadioButton
+        android:id="@+id/radioButton13"
+        android:layout_width="92dp"
+        android:layout_height="27dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginRight="20dp"
+        android:text="@string/rdbtn2"
+        app:layout_constraintBaseline_toBaselineOf="@+id/radioButton14"
+        app:layout_constraintEnd_toStartOf="@+id/radioButton14" />
+
+    <RadioButton
+        android:id="@+id/radioButton14"
+        android:layout_width="92dp"
+        android:layout_height="27dp"
+        android:layout_marginEnd="34dp"
+        android:layout_marginRight="34dp"
+        android:text="@string/rdbtn3"
+        app:layout_constraintBottom_toTopOf="@+id/radioButton17"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/divider2" />
+
+    <TextView
+        android:id="@+id/textView14"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="55dp"
+        android:text="@string/txtThV5"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.159"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/radioButton15" />
+
+    <RadioButton
+        android:id="@+id/radioButton18"
+        android:layout_width="165dp"
+        android:layout_height="43dp"
+        android:layout_marginTop="24dp"
+        android:text="@string/rdbtn7"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.231"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView14" />
+
+    <Button
+        android:id="@+id/customer"
+        android:layout_width="172dp"
+        android:layout_height="65dp"
+        android:layout_marginTop="20dp"
+        android:onClick="sendDetail3"
+        android:text="@string/btnTh1"
+        app:backgroundTint="@color/NavyBlue"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/radioButton18"
+        app:layout_constraintVertical_bias="0.0" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

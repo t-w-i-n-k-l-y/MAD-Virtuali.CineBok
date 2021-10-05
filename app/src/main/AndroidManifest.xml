@@ -11,7 +11,15 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.CineBok">
-
+        <activity android:name=".HallAddActivity"></activity>
+        <activity android:name=".HallCustomerLoginActivity" />
+        <activity android:name=".HallAdminLoginActivity" />
+        <activity android:name=".HallMainActivity6" />
+        <activity android:name=".HallMainActivity5" />
+        <activity android:name=".HallMainActivity4" />
+        <activity android:name=".HallMainActivity3" />
+        <activity android:name=".HallMainActivity2" />
+        <activity android:name=".HallMainActivity" />
         <activity
             android:name=".VipMoviesActivity"
             android:label="VIP Cinema">
@@ -19,12 +27,6 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".HomeActivity" />
         </activity>
-
-
-
-
-
-
 
         <activity android:name=".Login">
 <!--            <intent-filter>-->
@@ -53,14 +55,6 @@
         </activity>
 
 
-
-
-
-
-
-
-
-
         <activity
             android:name=".VipCheckoutActivity"
             android:label="Checkout">
@@ -68,7 +62,6 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".VipBookingActivity" />
         </activity>
-
         <activity
             android:name=".VipBookingActivity"
             android:label="VIP Cinema Booking">
@@ -76,9 +69,7 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".VipMoviesActivity" />
         </activity>
-
         <activity android:name=".UpdateSnackListActivity" />
-
         <activity
             android:name=".SnackMenuActivity"
             android:label="Snack and Beverages">
@@ -86,7 +77,6 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".MainActivity" />
         </activity>
-
         <activity
             android:name=".SnackListActivity"
             android:label="Snack and Beverage List">
@@ -94,7 +84,6 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".SnackMenuActivity" />
         </activity>
-
         <activity
             android:name=".SnackBeverageActivity"
             android:label="Snack and Beverages">
@@ -102,16 +91,14 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".VipBookingActivity" />
         </activity>
-
         <activity android:name=".AdminHomeActivity" />
-
-        <activity android:name=".AddNewSnackActivity"
+        <activity
+            android:name=".AddNewSnackActivity"
             android:label="Add new record">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".SnackListActivity" />
         </activity>
-
         <activity
             android:name=".HomeActivity"
             android:label="@string/title_activity_home"
@@ -121,8 +108,8 @@
                 android:value=".MainActivity" />
         </activity>
 
-        <activity android:name=".MainActivity"
-            android:theme="@style/Theme.CineBok.NoActionBar">
+        <!--Hall Management Home-->
+        <activity android:name=".HallDetails">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -130,6 +117,16 @@
             </intent-filter>
         </activity>
 
+
+       <!-- Thursha's home commented due to test HallManagement <activity
+            android:name=".MainActivity"
+            android:theme="@style/Theme.CineBok.NoActionBar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>-->
     </application>
 
 </manifest>
