@@ -6,6 +6,15 @@ public class ScheduleVip {
     int availableTickets;
     double tPrice;
     String mName, hName, hType, duration;
+    String mUrl;
+
+    public String getmUrl() {
+        return mUrl;
+    }
+
+    public void setmUrl(String mUrl) {
+        this.mUrl = mUrl;
+    }
 
     public ScheduleVip() {
     }

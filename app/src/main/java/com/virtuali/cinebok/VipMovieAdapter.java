@@ -7,12 +7,14 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.bumptech.glide.Glide;
 import com.firebase.ui.database.FirebaseRecyclerAdapter;
 import com.firebase.ui.database.FirebaseRecyclerOptions;
 import com.google.android.gms.tasks.OnFailureListener;
@@ -45,7 +47,7 @@ public class VipMovieAdapter extends FirebaseRecyclerAdapter<ScheduleVip,VipMovi
         holder.date.setText("Date: " + model.getDate());
         holder.time.setText("Time: " + model.getTime());
         holder.Tprice.setText("Ticket Price: " + model.gettPrice());
-//        Glide.with(holder.img.getContext()).load(sb.getSbUrl()).into(holder.img);
+        Glide.with(holder.image.getContext()).load(model.getmUrl()).into(holder.image);
 
 
         holder.book.setOnClickListener(new View.OnClickListener() {
@@ -54,12 +56,13 @@ public class VipMovieAdapter extends FirebaseRecyclerAdapter<ScheduleVip,VipMovi
                 Intent i = new Intent(view.getContext(), VipBookingActivity.class);
                 if(model.gettPrice().isEmpty()){
                     Toast.makeText(view.getContext(), "Error!", Toast.LENGTH_SHORT).show();
-                    i.putExtra("ticketPrice", "1000");
+//                    i.putExtra("ticketPrice", "1000");
                 }
                 else{
                     i.putExtra("ticketPrice", model.gettPrice());
+                    view.getContext().startActivity(i);
                 }
-                view.getContext().startActivity(i);
+
 
 
             }
@@ -80,6 +83,7 @@ public class VipMovieAdapter extends FirebaseRecyclerAdapter<ScheduleVip,VipMovi
 
         TextView Mname, Hname, duration, date, time, Tprice;
         Button book;
+        ImageView image;
 
         public myviewholder(@NonNull View itemView) {
             super(itemView);
@@ -90,6 +94,7 @@ public class VipMovieAdapter extends FirebaseRecyclerAdapter<ScheduleVip,VipMovi
             date = itemView.findViewById(R.id.tv_date_vip_t);
             time = itemView.findViewById(R.id.tv_time_vip_t);
             Tprice = itemView.findViewById(R.id.tv_price_vip_t);
+            image = itemView.findViewById(R.id.iv_img_vip);
 
             book = itemView.findViewById(R.id.btn_book1_t);
 

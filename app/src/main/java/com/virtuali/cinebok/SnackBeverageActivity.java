@@ -1,10 +1,16 @@
 package com.virtuali.cinebok;
 
+import android.content.ContentValues;
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Button;
+import android.widget.EditText;
 import android.widget.SearchView;
 import android.widget.Toast;
 
@@ -30,7 +36,8 @@ public class SnackBeverageActivity extends AppCompatActivity {
     RecyclerView recview;
     SnackBeverageAdapterCus adapter;
     FloatingActionButton fb;
-
+    ArrayList<Double> total = new ArrayList<>();
+    int sum = 0;
 
     String ticketTot;
 
@@ -52,8 +59,11 @@ public class SnackBeverageActivity extends AppCompatActivity {
                         .setQuery(FirebaseDatabase.getInstance().getReference().child("SnackBeverage"), SnackBeverage.class)
                         .build();
 
+        GlobalClass.snackTot = 0;
+
         adapter=new SnackBeverageAdapterCus(options);
         recview.setAdapter(adapter);
+
 
     }
 
@@ -115,7 +125,9 @@ public class SnackBeverageActivity extends AppCompatActivity {
     }
 
     public void gotocheckout(View view){
+
         Intent intent = new Intent(this, VipCheckoutActivity.class);
         intent.putExtra("TicketTot", ticketTot);
+        intent.putExtra("snackTot", sum);
         startActivity(intent);
     }}

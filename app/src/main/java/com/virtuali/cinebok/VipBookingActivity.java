@@ -46,6 +46,7 @@ public class VipBookingActivity extends AppCompatActivity {
                         vb.setNoTickets(et_no_tickets_t.getText().toString().trim());
                         vb.settPrice(ticketPrice);
 
+                        GlobalClass.snackTot = 0;
                         String tot = vb.getTicketTot();
 
                         Intent intent = new Intent(VipBookingActivity.this,VipCheckoutActivity.class);

@@ -20,7 +20,9 @@ public class VipCheckoutActivity extends AppCompatActivity {
 
         Intent i = getIntent();
         String ticketTot = i.getExtras().getString("TicketTot");
-        int snackTot = GlobalClass.snackTot;
+
+        double snackTotal = GlobalClass.snackTot;
+        System.out.println(snackTotal);
         GlobalClass.snackTot = 0;
 
         et_snack_tot_t = findViewById(R.id.et_snack_tot_t);
@@ -28,9 +30,9 @@ public class VipCheckoutActivity extends AppCompatActivity {
         et_tot_t = findViewById(R.id.et_tot_t);
 
         et_ticket_tot_t.setText(ticketTot);
-        et_snack_tot_t.setText(String.valueOf(snackTot));
+        et_snack_tot_t.setText(String.valueOf(snackTotal));
 
-        double Subtot = Double.parseDouble(ticketTot) + snackTot;
+        double Subtot = Double.parseDouble(ticketTot) + snackTotal;
 
         et_tot_t.setText(String.valueOf(Subtot));
 
