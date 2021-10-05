@@ -48,6 +48,7 @@
         android:id="@+id/btn_movie_management"
         android:layout_width="409dp"
         android:layout_height="wrap_content"
+        android:onClick="gotomoviemanage"
         android:text="@string/btn_movie_management"
         android:textAllCaps="false"
         app:layout_constraintBottom_toTopOf="@+id/btn_schedule_management"

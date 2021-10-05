@@ -8,9 +8,154 @@
   "client": [
     {
       "client_info": {
+        "mobilesdk_app_id": "1:872814138834:android:1c60fa6965a1a3230fe40b",
+        "android_client_info": {
+          "package_name": "com.example.myapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "872814138834-n8rl6vjkloenjhc8mh6itu3ci8dti2gi.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBrOO_mZuDBjs26uczkE-JCvCqa0dOEr9M"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "872814138834-n8rl6vjkloenjhc8mh6itu3ci8dti2gi.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:872814138834:android:c709518314b740690fe40b",
+        "android_client_info": {
+          "package_name": "com.example.virtuali"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "872814138834-n8rl6vjkloenjhc8mh6itu3ci8dti2gi.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBrOO_mZuDBjs26uczkE-JCvCqa0dOEr9M"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "872814138834-n8rl6vjkloenjhc8mh6itu3ci8dti2gi.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:872814138834:android:246dee27c60119230fe40b",
+        "android_client_info": {
+          "package_name": "com.example.virtuali_pawan"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "872814138834-n8rl6vjkloenjhc8mh6itu3ci8dti2gi.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBrOO_mZuDBjs26uczkE-JCvCqa0dOEr9M"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "872814138834-n8rl6vjkloenjhc8mh6itu3ci8dti2gi.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:872814138834:android:825c5ce10e5483cf0fe40b",
+        "android_client_info": {
+          "package_name": "com.mad2021.cineapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "872814138834-n8rl6vjkloenjhc8mh6itu3ci8dti2gi.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBrOO_mZuDBjs26uczkE-JCvCqa0dOEr9M"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "872814138834-n8rl6vjkloenjhc8mh6itu3ci8dti2gi.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
         "mobilesdk_app_id": "1:872814138834:android:b53d013d7137b4990fe40b",
         "android_client_info": {
           "package_name": "com.virtuali.cinebok"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "872814138834-n8rl6vjkloenjhc8mh6itu3ci8dti2gi.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBrOO_mZuDBjs26uczkE-JCvCqa0dOEr9M"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "872814138834-n8rl6vjkloenjhc8mh6itu3ci8dti2gi.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:872814138834:android:61319a130f243c940fe40b",
+        "android_client_info": {
+          "package_name": "com.virtuali.virtuali"
         }
       },
       "oauth_client": [
