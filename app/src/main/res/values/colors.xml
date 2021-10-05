@@ -10,4 +10,5 @@
     <color name="medium_blue">#0000cd</color>
     <color name="navy_blue">#000080</color>
     <color name="full_tansparent">#00000000</color>
+    <color name="NavyBlue">#000080</color>
 </resources>

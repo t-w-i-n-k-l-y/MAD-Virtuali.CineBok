@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:cardCornerRadius="6dp"
+    android:elevation="6dp"
+    app:cardUseCompatPadding="true">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/relativeLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="15dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:layout_editor_absoluteX="4dp"
+        tools:layout_editor_absoluteY="5dp">
+
+
+        <Button
+            android:id="@+id/btnDelete"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="40dp"
+            android:layout_marginRight="40dp"
+            android:text="Delete"
+            android:textAllCaps="false"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/description" />
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/img1"
+            android:layout_width="88dp"
+            android:layout_height="89dp"
+            android:layout_marginTop="42dp"
+            android:layout_marginEnd="48dp"
+            android:layout_marginRight="48dp"
+            android:layout_marginBottom="42dp"
+            android:src="@mipmap/ic_launcher"
+            app:civ_border_color="#ff000000"
+            app:civ_border_width="2dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/nametext"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.512" />
+
+        <TextView
+            android:id="@+id/nametext"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="64dp"
+            android:text="HallName"
+            android:textColor="#000"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.501"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/description"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="40dp"
+            android:layout_marginLeft="40dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="122dp"
+            android:layout_marginRight="122dp"
+            android:text="Enter Description"
+            android:textColor="#000"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toEndOf="@+id/img1"
+            app:layout_constraintTop_toBottomOf="@+id/nametext" />
+
+        <Button
+            android:id="@+id/btnEdit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="136dp"
+            android:layout_marginLeft="136dp"
+            android:layout_marginTop="16dp"
+            android:text="Edit"
+            android:textAllCaps="false"
+            app:layout_constraintEnd_toStartOf="@+id/btnDelete"
+            app:layout_constraintHorizontal_bias="0.153"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/description" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.cardview.widget.CardView>
