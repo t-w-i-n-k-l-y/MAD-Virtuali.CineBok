@@ -22,6 +22,12 @@ public class AdminHomeActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
+    public void gotoHallManage(View view){
+        Intent intent = new Intent(this, HallDetails.class);
+        startActivity(intent);
+    }
+
+
 
     public void schedulemanage(View view){
         Intent intent = new Intent(this, AddSchedule.class);

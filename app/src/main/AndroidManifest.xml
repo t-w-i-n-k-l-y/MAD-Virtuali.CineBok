@@ -124,6 +124,13 @@
 
         <!--Hall Management Home-->
         <activity android:name=".HallDetails">
+
+
+        </activity>
+
+
+        <activity
+
 <!--            <intent-filter>-->
 <!--                <action android:name="android.intent.action.MAIN" />-->
 
