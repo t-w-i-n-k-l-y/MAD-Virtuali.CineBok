@@ -1,25 +1,35 @@
 package com.virtuali.cinebok;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.firebase.ui.database.FirebaseRecyclerAdapter;
 import com.firebase.ui.database.FirebaseRecyclerOptions;
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.firebase.database.FirebaseDatabase;
+import com.orhanobut.dialogplus.DialogPlus;
+import com.orhanobut.dialogplus.ViewHolder;
+import com.virtuali.cinebok.model.GlobalClass;
 import com.virtuali.cinebok.model.ScheduleVip;
 
 import org.jetbrains.annotations.NotNull;
 
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
 
 public class VipMovieAdapter extends FirebaseRecyclerAdapter<ScheduleVip,VipMovieAdapter.myviewholder> {
-
 
     public VipMovieAdapter(@NonNull FirebaseRecyclerOptions<ScheduleVip> options)
     {
@@ -36,6 +46,24 @@ public class VipMovieAdapter extends FirebaseRecyclerAdapter<ScheduleVip,VipMovi
         holder.time.setText("Time: " + model.getTime());
         holder.Tprice.setText("Ticket Price: " + model.gettPrice());
 //        Glide.with(holder.img.getContext()).load(sb.getSbUrl()).into(holder.img);
+
+
+        holder.book.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i = new Intent(view.getContext(), VipBookingActivity.class);
+                if(model.gettPrice().isEmpty()){
+                    Toast.makeText(view.getContext(), "Error!", Toast.LENGTH_SHORT).show();
+                    i.putExtra("ticketPrice", "1000");
+                }
+                else{
+                    i.putExtra("ticketPrice", model.gettPrice());
+                }
+                view.getContext().startActivity(i);
+
+
+            }
+        });
 
     } // End of OnBindViewMethod
 

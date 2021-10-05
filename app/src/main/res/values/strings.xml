@@ -55,6 +55,7 @@
     <string name="action_admin">Admin</string>
 
 
+
     <!--Hall Management Strings-->
 
    <!-- <string name="app_name">CineApp</string>-->
@@ -105,4 +106,8 @@
     <string name="btnFif2">Return To Home</string>
     <string name="btnFif3">Update My Data</string>
     <string name="btnFif4">Delete My Data</string>
+
+    <string name="btn_back_t">Back to movie list</string>
+    <string name="itemCount">0</string>
+
 </resources>
